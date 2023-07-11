@@ -9,7 +9,7 @@ pushd "${SCRIPT_DIR}"
 echo "Loading environment variables..."
 # Load environment variables
 set -o allexport
-source .env
+source .env || true
 source .config
 set +o allexport
 
@@ -49,9 +49,8 @@ echo "Processing each album..."
 for id in "${!album_ids_to_names[@]}"
 do
     echo "Album ID: ${id}, Album Name: ${album_ids_to_names[$id]}"
-    if [[ -z "${ALBUM_NAME}" ]] || [[ "${ALBUM_NAME}" == "${album_ids_to_names[$id]}" ]]; then
-        echo "Downloading images for album: ${album_ids_to_names[$id]}"
-        ./download-images.sh "${id}" "${album_ids_to_names[$id]}"
+    if [[ "${ALBUM_NAME}" == "${album_ids_to_names[$id]}" ]]; then
+        $ALBUM_ID="${id}"
     fi
 done
 

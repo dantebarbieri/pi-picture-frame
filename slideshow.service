@@ -1,0 +1,10 @@
+# /etc/systemd/system/slideshow.service
+[Unit]
+Description=SmugMug Slideshow
+
+[Service]
+ExecStart=/path/to/your/slideshow_script.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

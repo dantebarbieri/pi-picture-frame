@@ -7,9 +7,11 @@ echo "The script directory is: ${SCRIPT_DIR}"
 pushd "${SCRIPT_DIR}"
 
 echo "Getting album names & downloading images..."
-./get-album-names.sh
+./download-images.sh
 echo "Album names & images downloaded."
 
 popd
 
 echo "Script execution completed."
+
+exec display-images.sh
