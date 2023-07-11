@@ -25,8 +25,6 @@ then
     echo "jq installed successfully."
 fi
 
-#!/bin/bash
-
 echo "Checking if jhead is installed..."
 # Check if jhead is installed, install if not
 if ! command -v jhead &> /dev/null
