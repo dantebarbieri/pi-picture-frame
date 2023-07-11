@@ -18,7 +18,7 @@ pushd "${IMAGES_DIR}"
 echo "Starting the slideshow..."
 while true
 do
-    feh -r -S mtime -D $SLIDE_DELAY "$IMAGES_DIR"
+    feh -r -S mtime -D $SLIDE_DELAY -F -Z -z -Y --cycle-once "$IMAGES_DIR"
 done
 
 popd
