@@ -14,11 +14,21 @@ SMUGMUG_API_SECRET=
 
 ### Install Script
 
+[install](./install.sh)
 ```sh
 git clone https://github.com/dantebarbieri/pi-picture-frame \
 && cd pi-picture-frame \
 && ./install.sh
 ```
+
+### Uninstall Script
+
+[uninstall](./uninstall.sh)
+```sh
+./uninstall.sh
+```
+
+Undoes the work of install and setup. Does not uninstall prerequisite packages, but unregisters all cron jobs for this app and removes the systemd service. See [Architecture](#architecture) for more information.
 
 ## Usage
 
