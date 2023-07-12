@@ -45,16 +45,6 @@ then
     echo "exiftool installed successfully."
 fi
 
-echo "Customizing slideshow service..."
-sed -i "s|/path/to/your/slideshow_script.sh|$SCRIPT_DIR/display-images.sh|g" slideshow.service
-
-echo "Creating symbolic link to slideshow service..."
-ln -sf "${SCRIPT_DIR}/slideshow.service" /etc/systemd/system/slideshow.service
-
-echo "Reloading systemd daemon..."
-systemctl start slideshow
-systemctl enable slideshow
-
 popd
 
 echo "Script execution completed."
