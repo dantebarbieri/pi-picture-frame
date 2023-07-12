@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 echo "Getting the directory of the script..."
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
@@ -16,9 +17,10 @@ mkdir -p "${IMAGES_DIR}"
 pushd "${IMAGES_DIR}"
 
 echo "Starting the slideshow..."
-while true
+recoverable=true
+while [ $recoverable ]
 do
-    feh -r -S mtime -D $SLIDE_DELAY -F -Z -z -Y --cycle-once "$IMAGES_DIR"
+    feh -r -n -S mtime -D $SLIDE_DELAY --auto-rotate -Z -F -Y --on-last-slide quit "$IMAGES_DIR"
 done
 
 popd

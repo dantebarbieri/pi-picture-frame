@@ -14,4 +14,4 @@ popd
 
 echo "Script execution completed."
 
-exec display-images.sh
+exec ./display-images.sh
