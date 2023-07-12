@@ -17,10 +17,9 @@ mkdir -p "${IMAGES_DIR}"
 pushd "${IMAGES_DIR}"
 
 echo "Starting the slideshow..."
-recoverable=true
-while [ $recoverable ]
+while true
 do
-    feh -r -n -S mtime -D $SLIDE_DELAY --auto-rotate -Z -F -Y --on-last-slide quit "$IMAGES_DIR"
+    feh -r -n -S mtime -D $SLIDE_DELAY --auto-rotate -Z -F -Y -R $SLIDE_DELAY "$IMAGES_DIR"
 done
 
 popd
